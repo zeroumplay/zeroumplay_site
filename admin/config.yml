@@ -1,7 +1,7 @@
 backend:
   name: github
-  repo: zeroumplay/zeroumplay_site   # ex.: joaosilva/zero-um-play — troque pelo seu
-  branch: main                         # troque se seu branch principal tiver outro nome
+  repo: zeroumplay/zeroumplay_site
+  branch: main
 
 media_folder: "assets/capas"
 public_folder: "/assets/capas"
@@ -38,5 +38,5 @@ collections:
             fields:
               - { label: "Capa da série (pôster)", name: "capa", widget: "image" }
               - { label: "Nome da série", name: "nome", widget: "string" }
-              - { label: "Temporada", name: "temporada", widget: "string", hint: "Ex.: 1ª Temporada, 3ª Temporada" }
-              - { label: "Quantidade de episódios", name: "episodios", widget: "number", value_type: "int", min: 1 }
+              - { label: "Temporada / Informações", name: "temporada", widget: "string", hint: "Ex.: 1ª Temporada - 10 Episódios" }
+              - { label: "Sinopse", name: "sinopse", widget: "text" }
