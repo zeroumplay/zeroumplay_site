@@ -1,0 +1,42 @@
+backend:
+  name: github
+  repo: zeroumplay/zeroumplay_site   # ex.: joaosilva/zero-um-play — troque pelo seu
+  branch: main                         # troque se seu branch principal tiver outro nome
+
+media_folder: "assets/capas"
+public_folder: "/assets/capas"
+
+publish_mode: simple
+
+collections:
+  - name: "novidades"
+    label: "Novidades"
+    files:
+      - name: "filmes"
+        label: "Filmes"
+        label_singular: "Filme"
+        file: "content/filmes.json"
+        fields:
+          - label: "Filmes no catálogo"
+            name: "itens"
+            widget: "list"
+            summary: "{{nome}}"
+            fields:
+              - { label: "Capa do filme (pôster)", name: "capa", widget: "image" }
+              - { label: "Nome do filme", name: "nome", widget: "string" }
+              - { label: "Sinopse", name: "sinopse", widget: "text" }
+
+      - name: "series"
+        label: "Séries"
+        label_singular: "Série"
+        file: "content/series.json"
+        fields:
+          - label: "Séries no catálogo"
+            name: "itens"
+            widget: "list"
+            summary: "{{nome}}"
+            fields:
+              - { label: "Capa da série (pôster)", name: "capa", widget: "image" }
+              - { label: "Nome da série", name: "nome", widget: "string" }
+              - { label: "Temporada", name: "temporada", widget: "string", hint: "Ex.: 1ª Temporada, 3ª Temporada" }
+              - { label: "Quantidade de episódios", name: "episodios", widget: "number", value_type: "int", min: 1 }
